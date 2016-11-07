@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="opowerbinding" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:thing="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0"
+    xsi:schemaLocation="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0 http://eclipse.org/smarthome/schemas/thing-description-1.0.0.xsd">
+
+    <!-- Weather Usage Forecast Thing Type -->
+    <thing-type id="wuf">
+        <label>Opower Weather Uasage Forecast Binding Thing</label>
+        <description>Sample thing for OpowerBinding Binding</description>
+
+        <channels>
+            <channel id="channelBillPeriod" typeId="channelBillPeriod" />
+            <channel id="channelEstimatedCost" typeId="channelEstimatedCost" />
+            <channel id="channelProjectedCost" typeId="channelProjectedCost" />
+            <channel id="channelEstimatedUsage" typeId="channelEstimatedUsage" />
+            <channel id="channelProjectedUsage" typeId="channelProjectedUsage" />
+        </channels>
+
+        <config-description>
+            <parameter name="url" type="text" required="true">
+                <label>URL</label>
+                <description>Weather Usage Forecast Service URL.
+                </description>
+            </parameter>
+            <parameter name="refresh" type="integer" min="1">
+                <label>Refresh interval</label>
+                <description>Specifies the refresh interval in seconds.</description>
+                <default>5</default>
+            </parameter>
+        </config-description>
+    </thing-type>
+
+    <channel-type id="channelBillPeriod">
+        <item-type>String</item-type>
+        <label>Current Bill Period Channel</label>
+        <description>Channel for Current Bill Period.</description>
+        <state readOnly="true" />
+    </channel-type>
+
+    <channel-type id="channelEstimatedCost">
+        <item-type>String</item-type>
+        <label>Estimated Cost Channel</label>
+        <description>Channel for Estimated Cost.</description>
+        <state readOnly="true" />
+    </channel-type>
+
+    <channel-type id="channelProjectedCost">
+        <item-type>String</item-type>
+        <label>Projected Cost Channel</label>
+        <description>Channel for Projected Cost Channel.</description>
+        <state readOnly="true" />
+    </channel-type>
+
+    <channel-type id="channelEstimatedUsage">
+        <item-type>String</item-type>
+        <label>Estimated Usage Channel</label>
+        <description>Channel for Estimated Usage.</description>
+        <state readOnly="true" />
+    </channel-type>
+
+    <channel-type id="channelProjectedUsage">
+        <item-type>String</item-type>
+        <label>Projected Usage Channel</label>
+        <description>Channel for Projected Usage Channel.</description>
+        <state readOnly="true" />
+    </channel-type>
+
+    <!-- Peak Hours Notification Thing Type -->
+    <thing-type id="phnotification">
+        <label>Opower Peak Hours Notification Binding Thing</label>
+        <description>Sample thing for OpowerBinding Binding</description>
+
+        <channels>
+            <channel id="channelPeakHoursNotification" typeId="channelPeakHoursNotification" />
+        </channels>
+
+        <config-description>
+            <parameter name="url" type="text" required="true">
+                <label>URL</label>
+                <description>Peak Hour Notification Service URL.
+                </description>
+            </parameter>
+            <parameter name="refresh" type="integer" min="1">
+                <label>Refresh interval</label>
+                <description>Specifies the refresh interval in seconds.</description>
+                <default>5</default>
+            </parameter>
+        </config-description>
+    </thing-type>
+
+    <channel-type id="channelPeakHoursNotification">
+        <item-type>String</item-type>
+        <label>Peak Hours Channel</label>
+        <description>Channel for Peak Hours Notification Channel.</description>
+        <state readOnly="true" />
+    </channel-type>
+</thing:thing-descriptions>
